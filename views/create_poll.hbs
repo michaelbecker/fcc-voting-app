@@ -1,0 +1,39 @@
+{{! User specific information }}
+{{> header_partial}}
+<div class="container-fluid">
+  
+  {{^session.login}}
+    <p>
+      You are not logged in. Please 
+      <a href="/user/login">login via github.com</a>
+    </p>
+  {{/session.login}}
+
+
+  {{#session}}
+    <div class="jumbotron">
+      <h3 class="display-4 text-center">Create a new poll</h3>
+    </div>
+
+    <form action="/poll/create" method="post">
+      <div class="form-group">
+        <label for="pollTitle">New Poll Title</label>
+        <input id="pollTitle" name="pollTitle" class="form-control" placeholder="Enter the poll's title" type="text">
+      </div>
+      
+      <div class="form-group">
+        <label for="optionsInput">Options (each on it's own line)</label>
+        <textarea id="optionsInput" name="optionsInput" class="form-control" rows="10" ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  
+  
+  {{/session}}
+
+  
+</div>
+{{> footer_partial}}
+
