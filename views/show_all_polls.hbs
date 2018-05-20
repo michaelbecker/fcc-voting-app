@@ -1,0 +1,23 @@
+{{! This is the landing page for the project. }}
+
+{{> header_partial}}
+
+<div class="container-fluid">
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">FreeCodeCamp Voting App</h1>
+    </div>
+  </div>
+
+  <div class="list-group">
+  {{#polls}}
+    <a class="list-group-item list-group-item-action list-group-item-light" 
+       href="./poll/{{_id}}">{{name}}</a>
+  {{/polls}}
+  </div>
+
+</div>                                                                         
+                                                                         
+{{> footer_partial}}
+
